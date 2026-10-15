@@ -87,6 +87,25 @@ def state_graph(entries):
     return "\n      ".join(rows)
 
 
+def medium_graph(entries):
+    total = len(entries)
+    counts = Counter(entry["medium"] for entry in entries)
+    media = load_json(ROOT / "format.json")["media"]
+    rows = []
+    for medium in media:
+        count = counts.get(medium, 0)
+        if not count:
+            continue
+        scale = count / total if total else 0
+        rows.append(
+            "<div class=\"graphrow\">"
+            f"<span class=\"graphlabel\">{html.escape(medium.capitalize())}</span>"
+            f"<span class=\"graphbar\" aria-hidden=\"true\"><i style=\"--scale:{scale:.6f}\"></i></span>"
+            f"<span class=\"graphcount\">{count} of {total} entries</span>"
+            "</div>"
+        )
+    return "\n      ".join(rows)
+
 def key_table():
     state_format = load_json(ROOT / "format.json")["states"]
     rows = ["<table class=\"keytable\">", "<thead><tr><th scope=\"col\">State</th><th scope=\"col\">What it means</th></tr></thead>", "<tbody>"]
@@ -243,6 +262,13 @@ def render():
   <h2 id="counts-h">Counts by state</h2>
   <div>
       {state_graph(entries)}
+  </div>
+</section>
+
+<section aria-labelledby="media-h">
+  <h2 id="media-h">Counts by medium</h2>
+  <div>
+      {medium_graph(entries)}
   </div>
 </section>
 
