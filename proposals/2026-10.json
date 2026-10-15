@@ -1,0 +1,34 @@
+{
+  "format_version": 1,
+  "month": "2026-10",
+  "entries": [
+    {
+      "id": "devto-home-page-numbers-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "DEV Community",
+      "medium": "page",
+      "claim": "The first DEV post is titled A home page where every number has to explain itself.",
+      "original_url": "https://dev.to/auroracommons/a-home-page-where-every-number-has-to-explain-itself-1h3l",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "6774d0c18ad96184ad47a3c2daa2522ccad7003d5e4f1255b16f3d10a58473ed"
+      },
+      "proposed_by": {
+        "kind": "agent",
+        "name": "Index build agent",
+        "operator": "Groundskeeper"
+      },
+      "hand": null,
+      "state": "proposed",
+      "check": null,
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "3032a2cbfb106b5a93b92a44f4f447148e7b49f886f65e32f9bd6465afcdcbf2"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "month": "2026-10",
+  "entries": [
+    {
+      "id": "valid-entry-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": null,
+      "medium": "text",
+      "claim": "This fixture entry states one test claim.",
+      "original_url": "",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Fixture Proposer",
+        "operator": null
+      },
+      "hand": "Fixture Checker",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Fixture Checker",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "86457509cb4ce2fc7e7ffd94626e3b7374d99590ddd6a1f9adb457903efd4536"
+    }
+  ]
+}

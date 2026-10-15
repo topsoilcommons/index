@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Index</title>
+<meta name="description" content="The Commons record in time order, each entry with its state, hand, and check.">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aurora Commons">
+<meta property="og:title" content="The Index">
+<meta property="og:description" content="The Commons record in time order, each entry with its state, hand, and check.">
+<meta property="og:url" content="https://auroracommons.github.io/index/">
+<meta property="og:image" content="https://auroracommons.github.io/auroracommons/assets/aurora-logo.png">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1600">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Index">
+<meta name="twitter:description" content="The Commons record in time order, each entry with its state, hand, and check.">
+<meta name="twitter:image" content="https://auroracommons.github.io/auroracommons/assets/aurora-logo.png">
+<style>
+  :root{--bg:#fbfaf7;--ink:#1b1e23;--soft:#5a6068;--line:#e4e0d6;--rub:#9e2b25}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .commons-bar{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;max-width:980px;margin:0 auto;padding:10px 20px 8px;font-size:14px;border-bottom:1px solid var(--line)}
+  .commons-bar .brand{font-weight:800;color:var(--ink);text-decoration:none;margin-right:4px}
+  .commons-bar a{color:var(--ink);text-decoration:none}
+  .commons-bar a:hover{text-decoration:underline}
+  .commons-bar .current{font-weight:700}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  header{padding:28px 0 4px}
+  h1{font-size:52px;letter-spacing:-1.5px;margin:14px 0 8px;font-weight:800}
+  .tag{font-size:19px;color:var(--soft);max-width:680px;margin:0}
+  .firststep{font-size:17px;margin:18px 0 0;max-width:680px}
+  .counts{font-size:16px;margin:22px 0 0;max-width:760px}
+  .rub{color:var(--rub)}
+  h2{font-size:25px;letter-spacing:-.5px;margin:0 0 8px;font-weight:800}
+  section{padding:42px 0 4px}
+  .graphrow{display:grid;grid-template-columns:110px 1fr 130px;gap:12px;align-items:center;border-top:1px solid var(--line);padding:9px 0}
+  .graphlabel{font-weight:700}
+  .graphbar{display:block;height:12px;border:1px solid var(--line);background:#fff}
+  .graphbar i{display:block;height:100%;background:var(--ink);transform:scaleX(var(--scale));transform-origin:left;animation:draw .7s ease-out 1}
+  @keyframes draw{from{transform:scaleX(0)}}
+  @media (prefers-reduced-motion: reduce){.graphbar i{animation:none}}
+  .graphcount{font-size:14px;color:var(--soft)}
+  .entry{border-top:1px solid var(--line);padding:18px 0 16px;margin-top:18px}
+  .entry h3{font-size:20px;letter-spacing:-.3px;margin:0 0 8px;font-weight:700}
+  .entry p{margin:0 0 8px;font-size:15.5px;max-width:760px}
+  .entry .state{font-size:16px;font-weight:700}
+  .entry dl{margin:0 0 10px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;max-width:680px}
+  .entry dt{font-weight:700}
+  .entry dd{margin:0}
+  .fingerprint{font-size:13px;color:var(--soft);overflow-wrap:anywhere}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .share{font:inherit;font-weight:700;font-size:15px;min-width:44px;min-height:44px;background:none;border:0;padding:0;color:var(--ink);cursor:pointer;text-align:left}
+  .share:hover{text-decoration:underline}
+  table{border-collapse:collapse;width:100%;font-size:15px}
+  th,td{border-top:1px solid var(--line);padding:9px 12px 9px 0;text-align:left;vertical-align:top}
+  thead th{border-top:0}
+  footer{padding:54px 0 62px;margin-top:46px;border-top:1px solid var(--line);color:var(--soft);font-size:14px}
+  footer a{color:var(--ink);text-decoration:none;font-weight:600}
+  .endline{text-align:center;font-size:15px;color:var(--ink);margin:0;padding:0 0 54px}
+  @media (max-width:620px){h1{font-size:38px}.graphrow{grid-template-columns:86px 1fr}.graphcount{grid-column:2}.entry dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="commons-bar" aria-label="Aurora Commons sites">
+  <a class="brand" href="https://auroracommons.github.io/auroracommons/">Aurora Commons</a>
+  <span class="current" aria-current="page">The Index</span>
+  <a href="https://auroracommons.github.io/ground/">Ground</a>
+  <a href="https://auroracommons.github.io/still/">Still</a>
+  <a href="https://auroracommons.github.io/atlas/">Atlas</a>
+  <a href="https://auroracommons.github.io/cohort/">Cohort</a>
+  <a href="https://auroracommons.github.io/graph/">Graph</a>
+  <a href="https://auroracommons.github.io/machine/">Machine</a>
+  <a href="https://auroracommons.github.io/lumen/">Lumen</a>
+</nav>
+<div class="wrap">
+<header>
+  <h1>The Index</h1>
+  <p class="tag">The Commons record in time order, each entry with its state, hand, and check.</p>
+  <p class="firststep">Start with the first entry below. Open its original, then compare it with the claim.</p>
+  <p class="counts">This page lists <span class="rub">12</span> entries: <span class="rub">11</span> stand verified and <span class="rub">1</span> stand corrected, counted from entries/2026-10.json in this repository on <span class="rub">October 15, 2026</span>. <span class="rub">1</span> agent proposal stand proposed in proposals/2026-10.json and are not counted in that total.</p>
+</header>
+
+<section aria-labelledby="counts-h">
+  <h2 id="counts-h">Counts by state</h2>
+  <div>
+      <div class="graphrow"><span class="graphlabel">Verified</span><span class="graphbar" aria-hidden="true"><i style="--scale:0.916667"></i></span><span class="graphcount">11 of 12 entries</span></div>
+      <div class="graphrow"><span class="graphlabel">Corrected</span><span class="graphbar" aria-hidden="true"><i style="--scale:0.083333"></i></span><span class="graphcount">1 of 12 entries</span></div>
+  </div>
+</section>
+
+<main>
+<section aria-labelledby="entries-h">
+  <h2 id="entries-h">Entries</h2>
+    <article class="entry" id="progress-log-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The profile repository publishes a public progress log of what was done, what the proof shows, what broke, and what comes next.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>text</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/auroracommons/main/PROGRESS.md">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">39100d41276182f90f48d0724d7dffd2a6a96a9f90bc6c771cc03133e988128a</span></p>
+      <p class="fingerprint">Seal: <span class="mono">5faf308cd2e011be4cd60b97ae7ec521674209d24a5ec5033d50300576ded4fc</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The profile repository publishes a public progress log of what was done, what the proof shows, what broke, and what comes next." data-url="https://auroracommons.github.io/index/#progress-log-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="timeline-gates-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The Commons timeline presents intentions with gates rather than promises.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>text</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/auroracommons/main/TIMELINE.md">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">b4374a15aba61d5b9a3903eed4b355d3b53321ad4ab87517088b3f680eea5899</span></p>
+      <p class="fingerprint">Seal: <span class="mono">b848f26a798a8191936d488e3e98e6e5b5d9af4a2374c620d9d6673a88f9a20f</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The Commons timeline presents intentions with gates rather than promises." data-url="https://auroracommons.github.io/index/#timeline-gates-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="needs-map-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The Ascent maps seven layers of human needs in the order the needs support one another.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>text</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/auroracommons/main/NEEDS.md">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">4d1b6aa6616d6f96db04f9dcdfd98cd90ed5ae585d2d7fb8663aac2e987f77f6</span></p>
+      <p class="fingerprint">Seal: <span class="mono">0e772e9d75660d50b2bc8e6f7143d545c6f05dde06805150e209759ae4335b40</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The Ascent maps seven layers of human needs in the order the needs support one another." data-url="https://auroracommons.github.io/index/#needs-map-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="contribution-ledger-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The public ledger records verified contributions with evidence attached.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>text</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/auroracommons/main/LEDGER.md">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">5a75394acd9165acd50dbe9d80c962ece4cffd372c56e5959ca147c55d27bbc8</span></p>
+      <p class="fingerprint">Seal: <span class="mono">939b98c575a86711ba220b73b9fb860d30b496d7eeb82deff7362030d965608a</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The public ledger records verified contributions with evidence attached." data-url="https://auroracommons.github.io/index/#contribution-ledger-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="commons-mark-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The Commons mark is an open doorway built from stacked layers standing on a heavy floor line.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>image</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/auroracommons/main/assets/aurora-logo.png">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">455c8727db40af5bc4bc102f9eda5592ba0a6ac800d96625cc638dada9efb30a</span></p>
+      <p class="fingerprint">Seal: <span class="mono">bcb9caad1c7b0c64f0094203b84c73d6591ae48f1aa4a258595eab0312edb5b3</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The Commons mark is an open doorway built from stacked layers standing on a heavy floor line." data-url="https://auroracommons.github.io/index/#commons-mark-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="commons-home-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The Commons home page presents seven layers of need, each with one proof sentence.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub Pages</dd></div>
+        <div><dt>Medium</dt><dd>page</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://auroracommons.github.io/auroracommons/">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">3c0764bf1c0490e0ba462eb41b3c1975da8ec3863861751008e46f2aec53b8d8</span></p>
+      <p class="fingerprint">Seal: <span class="mono">8aff53ae0577774a391fa0633a32a342876e208cddd32a7d3c5103993b260147</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The Commons home page presents seven layers of need, each with one proof sentence." data-url="https://auroracommons.github.io/index/#commons-home-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="foundations-page-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>Foundations presents findings as demonstrations that a visitor can run.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub Pages</dd></div>
+        <div><dt>Medium</dt><dd>page</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://auroracommons.github.io/auroracommons/foundations.html">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">5bfd6f4ae27f72e7a93602822bac94135be80608404b7416285afbca8195dd7a</span></p>
+      <p class="fingerprint">Seal: <span class="mono">120b807a8db3717aa76d67e59ebc1a452b0c5440d0c736b0fa8b7c3a195aefe7</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="Foundations presents findings as demonstrations that a visitor can run." data-url="https://auroracommons.github.io/index/#foundations-page-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="ground-board-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>Ground publishes local help listings that carry a check date and an expiry.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub Pages</dd></div>
+        <div><dt>Medium</dt><dd>page</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://auroracommons.github.io/ground/">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">b0a9f0e634381401b68162e4b815070ca619430653bb26331ac88201084230c7</span></p>
+      <p class="fingerprint">Seal: <span class="mono">5e5757bb932041ef0844ce522a9cd9290fb191bac4dc1ee21a0105b910e5768f</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="Ground publishes local help listings that carry a check date and an expiry." data-url="https://auroracommons.github.io/index/#ground-board-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="still-page-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>Still offers a check in, a breathing pacer, and a writing space on one page that sends nothing from the device.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub Pages</dd></div>
+        <div><dt>Medium</dt><dd>page</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://auroracommons.github.io/still/">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">52b65fe5e115542fdaeed20e54335306990bde5c112437e9c9284de68a2ce744</span></p>
+      <p class="fingerprint">Seal: <span class="mono">c4facb47cb208a766cd002f2d4bb0014d4a6894721fb5b6b0136236d0a2ba26b</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="Still offers a check in, a breathing pacer, and a writing space on one page that sends nothing from the device." data-url="https://auroracommons.github.io/index/#still-page-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="atlas-proof-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>Atlas presents one claim with its ground, hand, check, links, and seal.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub Pages</dd></div>
+        <div><dt>Medium</dt><dd>page</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://auroracommons.github.io/atlas/">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">d0603f482b13aab3a759a3b519ddd22aff8236c537aa091d96b795f682295cbf</span></p>
+      <p class="fingerprint">Seal: <span class="mono">cf6117060afeb5cfdf7029c093e4a47fbc993585dab424f976fb4378db486625</span></p>
+      
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="Atlas presents one claim with its ground, hand, check, links, and seal." data-url="https://auroracommons.github.io/index/#atlas-proof-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="graph-description-0937-2026-10-15">
+      <p class="state"><span class="rub">Corrected</span>. Hand: Groundskeeper.</p>
+      <h3>The Graph repository description read entities F1 0.937.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>text</dd></div>
+      </dl>
+      <p>Check: Opened the public progress record and the Graph record at their sources and compared them with the claim. Checked by Groundskeeper. Result: The old figure was superseded by the linked correction. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/auroracommons/main/PROGRESS.md">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">39100d41276182f90f48d0724d7dffd2a6a96a9f90bc6c771cc03133e988128a</span></p>
+      <p class="fingerprint">Seal: <span class="mono">3a4ed9b88a36e07d0715fff10fd821a067a311d47b9bb949f8c5bbcff000c43f</span></p>
+      <p class="linksline">Correction: <a href="#graph-description-0904-2026-10-15">graph-description-0904-2026-10-15</a></p>
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The Graph repository description read entities F1 0.937." data-url="https://auroracommons.github.io/index/#graph-description-0937-2026-10-15">Share</button></p>
+    </article>
+    <article class="entry" id="graph-description-0904-2026-10-15">
+      <p class="state"><span class="rub">Verified</span>. Hand: Groundskeeper.</p>
+      <h3>The Graph repository description reads entities F1 0.904.</h3>
+      <dl>
+        <div><dt>Time claimed</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Time received</dt><dd>October 15, 2026</dd></div>
+        <div><dt>Place</dt><dd>GitHub</dd></div>
+        <div><dt>Medium</dt><dd>text</dd></div>
+      </dl>
+      <p>Check: Opened the original at its source and compared it with the claim. Checked by Groundskeeper. Result: The claim matched the original. Date: October 15, 2026.</p>
+      <p><a href="https://raw.githubusercontent.com/auroracommons/graph/main/README.md">Open the original</a></p>
+      <p class="fingerprint">Original SHA-256: <span class="mono">b9d371dd7eaea39139324b33128e94153ecb750d3a556867812807e57a8d7023</span></p>
+      <p class="fingerprint">Seal: <span class="mono">761ad04789363728e54610b78399d00b8a72b7e835b4adfeb2acc2efc1aef116</span></p>
+      <p class="linksline">Corrects: <a href="#graph-description-0937-2026-10-15">graph-description-0937-2026-10-15</a></p>
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="The Graph repository description reads entities F1 0.904." data-url="https://auroracommons.github.io/index/#graph-description-0904-2026-10-15">Share</button></p>
+    </article>
+</section>
+
+<section aria-labelledby="key-h">
+  <h2 id="key-h">Key to the states</h2>
+      <table class="keytable">
+      <thead><tr><th scope="col">State</th><th scope="col">What it means</th></tr></thead>
+      <tbody>
+      <tr><th scope="row">Proposed</th><td>Brought to the Index and not yet adopted by a human.</td></tr>
+      <tr><th scope="row">Witnessed</th><td>A named human states that they were present or saw the original as it happened.</td></tr>
+      <tr><th scope="row">Verified</th><td>A named human adopted the entry after reopening the original and running the stated check.</td></tr>
+      <tr><th scope="row">Disputed</th><td>A named person contests the entry, with ground attached, and the dispute stays attached.</td></tr>
+      <tr><th scope="row">Corrected</th><td>The entry was wrong in a stated part, and a linked correction follows it.</td></tr>
+      <tr><th scope="row">Fallen</th><td>The entry did not hold, and its reason and replacement stay shown.</td></tr>
+      </tbody>
+      </table>
+</section>
+</main>
+
+<footer>
+  <p>Aurora Commons addresses the hierarchy of human needs through open source.</p>
+  <p>Stand on the shoulders of giants.</p>
+  <p>One rule: raise the floor beneath everyone.</p>
+  <p>Advised by Groundskeeper.</p>
+  <p><a href="https://www.linkedin.com/company/aurora-commons-io/">Aurora Commons on LinkedIn</a></p>
+</footer>
+</div>
+<p class="endline">That is everything. The page ends here.</p>
+<script>
+document.addEventListener("click", function(e){
+  var b = e.target && e.target.closest ? e.target.closest("[data-share]") : null;
+  if (!b) return;
+  var d = { title: b.getAttribute("data-title"), text: b.getAttribute("data-text"), url: b.getAttribute("data-url") };
+  if (navigator.share) { navigator.share(d).catch(function(){}); return; }
+  var old = b.textContent;
+  function done(){ b.textContent = "Link copied"; setTimeout(function(){ b.textContent = old; }, 2000); }
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(d.text + " " + d.url).then(done, done); }
+});
+</script>
+</body>
+</html>

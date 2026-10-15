@@ -1,0 +1,406 @@
+{
+  "format_version": 1,
+  "month": "2026-10",
+  "entries": [
+    {
+      "id": "progress-log-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "text",
+      "claim": "The profile repository publishes a public progress log of what was done, what the proof shows, what broke, and what comes next.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/auroracommons/main/PROGRESS.md",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "39100d41276182f90f48d0724d7dffd2a6a96a9f90bc6c771cc03133e988128a"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "5faf308cd2e011be4cd60b97ae7ec521674209d24a5ec5033d50300576ded4fc"
+    },
+    {
+      "id": "timeline-gates-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "text",
+      "claim": "The Commons timeline presents intentions with gates rather than promises.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/auroracommons/main/TIMELINE.md",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "b4374a15aba61d5b9a3903eed4b355d3b53321ad4ab87517088b3f680eea5899"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "b848f26a798a8191936d488e3e98e6e5b5d9af4a2374c620d9d6673a88f9a20f"
+    },
+    {
+      "id": "needs-map-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "text",
+      "claim": "The Ascent maps seven layers of human needs in the order the needs support one another.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/auroracommons/main/NEEDS.md",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "4d1b6aa6616d6f96db04f9dcdfd98cd90ed5ae585d2d7fb8663aac2e987f77f6"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "0e772e9d75660d50b2bc8e6f7143d545c6f05dde06805150e209759ae4335b40"
+    },
+    {
+      "id": "contribution-ledger-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "text",
+      "claim": "The public ledger records verified contributions with evidence attached.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/auroracommons/main/LEDGER.md",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "5a75394acd9165acd50dbe9d80c962ece4cffd372c56e5959ca147c55d27bbc8"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "939b98c575a86711ba220b73b9fb860d30b496d7eeb82deff7362030d965608a"
+    },
+    {
+      "id": "commons-mark-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "image",
+      "claim": "The Commons mark is an open doorway built from stacked layers standing on a heavy floor line.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/auroracommons/main/assets/aurora-logo.png",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "455c8727db40af5bc4bc102f9eda5592ba0a6ac800d96625cc638dada9efb30a"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "bcb9caad1c7b0c64f0094203b84c73d6591ae48f1aa4a258595eab0312edb5b3"
+    },
+    {
+      "id": "commons-home-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub Pages",
+      "medium": "page",
+      "claim": "The Commons home page presents seven layers of need, each with one proof sentence.",
+      "original_url": "https://auroracommons.github.io/auroracommons/",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "3c0764bf1c0490e0ba462eb41b3c1975da8ec3863861751008e46f2aec53b8d8"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "8aff53ae0577774a391fa0633a32a342876e208cddd32a7d3c5103993b260147"
+    },
+    {
+      "id": "foundations-page-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub Pages",
+      "medium": "page",
+      "claim": "Foundations presents findings as demonstrations that a visitor can run.",
+      "original_url": "https://auroracommons.github.io/auroracommons/foundations.html",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "5bfd6f4ae27f72e7a93602822bac94135be80608404b7416285afbca8195dd7a"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "120b807a8db3717aa76d67e59ebc1a452b0c5440d0c736b0fa8b7c3a195aefe7"
+    },
+    {
+      "id": "ground-board-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub Pages",
+      "medium": "page",
+      "claim": "Ground publishes local help listings that carry a check date and an expiry.",
+      "original_url": "https://auroracommons.github.io/ground/",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "b0a9f0e634381401b68162e4b815070ca619430653bb26331ac88201084230c7"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "5e5757bb932041ef0844ce522a9cd9290fb191bac4dc1ee21a0105b910e5768f"
+    },
+    {
+      "id": "still-page-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub Pages",
+      "medium": "page",
+      "claim": "Still offers a check in, a breathing pacer, and a writing space on one page that sends nothing from the device.",
+      "original_url": "https://auroracommons.github.io/still/",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "52b65fe5e115542fdaeed20e54335306990bde5c112437e9c9284de68a2ce744"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "c4facb47cb208a766cd002f2d4bb0014d4a6894721fb5b6b0136236d0a2ba26b"
+    },
+    {
+      "id": "atlas-proof-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub Pages",
+      "medium": "page",
+      "claim": "Atlas presents one claim with its ground, hand, check, links, and seal.",
+      "original_url": "https://auroracommons.github.io/atlas/",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "d0603f482b13aab3a759a3b519ddd22aff8236c537aa091d96b795f682295cbf"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "cf6117060afeb5cfdf7029c093e4a47fbc993585dab424f976fb4378db486625"
+    },
+    {
+      "id": "graph-description-0937-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "text",
+      "claim": "The Graph repository description read entities F1 0.937.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/auroracommons/main/PROGRESS.md",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "39100d41276182f90f48d0724d7dffd2a6a96a9f90bc6c771cc03133e988128a"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "corrected",
+      "check": {
+        "method": "Opened the public progress record and the Graph record at their sources and compared them with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The old figure was superseded by the linked correction.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": [
+          "graph-description-0904-2026-10-15"
+        ]
+      },
+      "seal": "3a4ed9b88a36e07d0715fff10fd821a067a311d47b9bb949f8c5bbcff000c43f"
+    },
+    {
+      "id": "graph-description-0904-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": "GitHub",
+      "medium": "text",
+      "claim": "The Graph repository description reads entities F1 0.904.",
+      "original_url": "https://raw.githubusercontent.com/auroracommons/graph/main/README.md",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "b9d371dd7eaea39139324b33128e94153ecb750d3a556867812807e57a8d7023"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Groundskeeper",
+        "operator": null
+      },
+      "hand": "Groundskeeper",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Groundskeeper",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [
+          "graph-description-0937-2026-10-15"
+        ],
+        "corrections": []
+      },
+      "seal": "761ad04789363728e54610b78399d00b8a72b7e835b4adfeb2acc2efc1aef116"
+    }
+  ]
+}

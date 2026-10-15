@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate entries and proposals
+        run: python3 tools/validate.py
+      - name: Check the generated format table
+        run: python3 tools/build_format.py --check
+      - name: Run the fixture tests
+        run: python3 tests/run_tests.py
+      - name: Check the generated viewer
+        run: python3 tools/build_viewer.py --check
