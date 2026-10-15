@@ -41,30 +41,34 @@ def count_sentence(entries, sources, proposals, proposal_sources):
     total = len(entries)
     counts = Counter(entry["state"] for entry in entries)
     state_format = load_json(ROOT / "format.json")["states"]
-    parts = []
+    sentences = [
+        f"This page lists <span class=\"rub\">{total}</span> entries in time order."
+    ]
     for state in state_format:
         count = counts.get(state["name"], 0)
         if count:
-            parts.append(f"<span class=\"rub\">{count}</span> stand {state['name']}")
+            noun = "entry" if count == 1 else "entries"
+            verb = "stands" if count == 1 else "stand"
+            sentences.append(
+                f"<span class=\"rub\">{count}</span> {noun} {verb} {state['name']}."
+            )
     latest_check = max(
         entry["check"]["date"] for entry in entries if entry.get("check")
     )
-    source_names = ", ".join(
-        f"{source.parent.name}/{source.name}" for source in sources
-    )
     proposal_total = len(proposals)
     proposal_word = "proposal" if proposal_total == 1 else "proposals"
-    proposal_sources_text = ", ".join(
-        f"{source.parent.name}/{source.name}" for source in proposal_sources
+    proposal_verb = "stands" if proposal_total == 1 else "stand"
+    proposal_be = "is" if proposal_total == 1 else "are"
+    sentences.append(
+        f"<span class=\"rub\">{proposal_total}</span> agent {proposal_word} "
+        f"{proposal_verb} proposed and {proposal_be} not counted in that total."
     )
-    return (
-        f"This page lists <span class=\"rub\">{total}</span> entries: "
-        + " and ".join(parts)
-        + f", counted from {html.escape(source_names)} in this repository on "
-        + f"<span class=\"rub\">{display_date(latest_check)}</span>. "
-        + f"<span class=\"rub\">{proposal_total}</span> agent {proposal_word} "
-        + f"stand proposed in {html.escape(proposal_sources_text)} and are not counted in that total."
+    sentences.append("The counts come from the data files held in this repository.")
+    sentences.append(
+        f"The latest check on this page was on "
+        f"<span class=\"rub\">{display_date(latest_check)}</span>."
     )
+    return " ".join(sentences)
 
 
 def state_graph(entries):
@@ -134,9 +138,21 @@ def link_line(entry):
 
 
 def entry_html(entry, state_labels):
-    state = state_labels[entry["state"]]
-    hand = entry["hand"] or "No human hand yet"
+    if entry["hand"]:
+        hand_sentence = f"{html.escape(entry['hand'])} stands behind this entry."
+    else:
+        hand_sentence = "No human hand stands behind this entry yet."
     place = entry["place"] or "Not stated"
+    proposer = entry["proposed_by"]
+    proposer_line = (
+        f"{html.escape(proposer['kind'])}, {html.escape(proposer['name'])}"
+    )
+    operator_row = ""
+    if proposer.get("operator"):
+        operator_row = (
+            f"\n        <div><dt>Operator</dt>"
+            f"<dd>{html.escape(proposer['operator'])}</dd></div>"
+        )
     if entry["check"]:
         check = entry["check"]
         check_line = (
@@ -148,20 +164,27 @@ def entry_html(entry, state_labels):
     else:
         check_line = "Check: none yet."
     return f"""<article class="entry" id="{html.escape(entry['id'])}">
-      <p class="state"><span class="rub">{html.escape(state)}</span>. Hand: {html.escape(hand)}.</p>
       <h3>{html.escape(entry['claim'])}</h3>
-      <dl>
+      <p class="state">This entry <span class="rub">stands {html.escape(entry['state'])}</span>. {hand_sentence} The claim is dated {html.escape(display_date(entry['time_claimed']))}.</p>
+      <p><a href="{html.escape(entry['original_url'])}\">Open the original for this entry</a></p>
+      <p><button type="button" class="share" data-share data-title="The Index" data-text="{html.escape(entry['claim'], quote=True)}" data-url="{SITE_URL}#{html.escape(entry['id'])}">Share</button></p>
+      <details class="tech">
+        <summary>For agents and builders</summary>
+        <dl>
+        <div><dt>Entry id</dt><dd class="mono">{html.escape(entry['id'])}</dd></div>
+        <div><dt>State name in the format</dt><dd>{html.escape(entry['state'])}</dd></div>
         <div><dt>Time claimed</dt><dd>{html.escape(display_date(entry['time_claimed']))}</dd></div>
         <div><dt>Time received</dt><dd>{html.escape(display_date(entry['time_received']))}</dd></div>
         <div><dt>Place</dt><dd>{html.escape(place)}</dd></div>
         <div><dt>Medium</dt><dd>{html.escape(entry['medium'])}</dd></div>
-      </dl>
-      <p>{check_line}</p>
-      <p><a href="{html.escape(entry['original_url'])}\">Open the original</a></p>
-      <p class="fingerprint">Original SHA-256: <span class="mono">{html.escape(entry['original_hash']['value'])}</span></p>
-      <p class="fingerprint">Seal: <span class="mono">{html.escape(entry['seal'])}</span></p>
-      {link_line(entry)}
-      <p><button type="button" class="share" data-share data-title="The Index" data-text="{html.escape(entry['claim'], quote=True)}" data-url="{SITE_URL}#{html.escape(entry['id'])}">Share</button></p>
+        <div><dt>Proposed by</dt><dd>{proposer_line}</dd></div>{operator_row}
+        <div><dt>Hand</dt><dd>{html.escape(entry['hand'] or 'None')}</dd></div>
+        </dl>
+        <p>{check_line}</p>
+        <p class="fingerprint">Original SHA-256: <span class="mono">{html.escape(entry['original_hash']['value'])}</span></p>
+        <p class="fingerprint">Seal: <span class="mono">{html.escape(entry['seal'])}</span></p>
+        {link_line(entry)}
+      </details>
     </article>"""
 
 
@@ -196,19 +219,24 @@ def render():
 <style>
   :root{{--bg:#fbfaf7;--ink:#1b1e23;--soft:#5a6068;--line:#e4e0d6;--rub:#9e2b25}}
   *{{box-sizing:border-box}}
-  body{{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}}
-  .commons-bar{{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;max-width:980px;margin:0 auto;padding:10px 20px 8px;font-size:14px;border-bottom:1px solid var(--line)}}
-  .commons-bar .brand{{font-weight:800;color:var(--ink);text-decoration:none;margin-right:4px}}
-  .commons-bar a{{color:var(--ink);text-decoration:none}}
+  body{{margin:0;background:var(--bg);color:#1b1e23;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}}
+  :focus-visible{{outline:2px solid var(--ink);outline-offset:2px}}
+  [id]{{scroll-margin-top:72px}}
+  .skip{{position:absolute;left:-9999px;top:0;background:var(--bg);color:#1b1e23;font-weight:600;padding:12px 16px;z-index:20}}
+  .skip:focus{{left:20px;top:8px}}
+  .commons-bar{{position:sticky;top:0;z-index:10;background:var(--bg);display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;max-width:980px;margin:0 auto;padding:0 20px;font-size:14px;border-bottom:1px solid var(--line)}}
+  .commons-bar .brand{{font-weight:600;color:#1b1e23;text-decoration:none;margin-right:4px}}
+  .commons-bar a{{color:#1b1e23;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}}
   .commons-bar a:hover{{text-decoration:underline}}
-  .commons-bar .current{{font-weight:700}}
+  .commons-bar .current{{font-weight:700;display:inline-flex;align-items:center;min-height:44px}}
   .wrap{{max-width:980px;margin:0 auto;padding:0 20px}}
   header{{padding:28px 0 4px}}
   h1{{font-size:52px;letter-spacing:-1.5px;margin:14px 0 8px;font-weight:800}}
-  .tag{{font-size:19px;color:var(--soft);max-width:680px;margin:0}}
+  .part{{font-size:16px;font-weight:600;max-width:680px;margin:0 0 10px}}
+  .tag{{font-size:19px;color:#5a6068;max-width:680px;margin:0}}
   .firststep{{font-size:17px;margin:18px 0 0;max-width:680px}}
   .counts{{font-size:16px;margin:22px 0 0;max-width:760px}}
-  .rub{{color:var(--rub)}}
+  .rub{{color:#9e2b25}}
   h2{{font-size:25px;letter-spacing:-.5px;margin:0 0 8px;font-weight:800}}
   section{{padding:42px 0 4px}}
   .graphrow{{display:grid;grid-template-columns:110px 1fr 130px;gap:12px;align-items:center;border-top:1px solid var(--line);padding:9px 0}}
@@ -217,31 +245,36 @@ def render():
   .graphbar i{{display:block;height:100%;background:var(--ink);transform:scaleX(var(--scale));transform-origin:left;animation:draw .7s ease-out 1}}
   @keyframes draw{{from{{transform:scaleX(0)}}}}
   @media (prefers-reduced-motion: reduce){{.graphbar i{{animation:none}}}}
-  .graphcount{{font-size:14px;color:var(--soft)}}
+  .graphcount{{font-size:14px;color:#5a6068}}
   .entry{{border-top:1px solid var(--line);padding:18px 0 16px;margin-top:18px}}
   .entry h3{{font-size:20px;letter-spacing:-.3px;margin:0 0 8px;font-weight:700}}
   .entry p{{margin:0 0 8px;font-size:15.5px;max-width:760px}}
-  .entry .state{{font-size:16px;font-weight:700}}
+  .entry .state{{font-size:16px}}
+  .entry .state .rub{{font-weight:700}}
+  .entry details{{margin:10px 0 4px;max-width:760px}}
+  .entry summary{{font-weight:700;cursor:pointer;min-height:44px;display:flex;align-items:center}}
   .entry dl{{margin:0 0 10px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;max-width:680px}}
   .entry dt{{font-weight:700}}
   .entry dd{{margin:0}}
-  .fingerprint{{font-size:13px;color:var(--soft);overflow-wrap:anywhere}}
+  .fingerprint{{font-size:13px;color:#5a6068;overflow-wrap:anywhere}}
   .mono{{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}}
-  .share{{font:inherit;font-weight:700;font-size:15px;min-width:44px;min-height:44px;background:none;border:0;padding:0;color:var(--ink);cursor:pointer;text-align:left}}
+  .share{{font:inherit;font-weight:700;font-size:15px;min-width:44px;min-height:44px;background:none;border:0;padding:0;color:#1b1e23;cursor:pointer;text-align:left}}
   .share:hover{{text-decoration:underline}}
   table{{border-collapse:collapse;width:100%;font-size:15px}}
   th,td{{border-top:1px solid var(--line);padding:9px 12px 9px 0;text-align:left;vertical-align:top}}
   thead th{{border-top:0}}
-  footer{{padding:54px 0 62px;margin-top:46px;border-top:1px solid var(--line);color:var(--soft);font-size:14px}}
-  footer a{{color:var(--ink);text-decoration:none;font-weight:600}}
-  .endline{{text-align:center;font-size:15px;color:var(--ink);margin:0;padding:0 0 54px}}
+  footer{{padding:54px 0 62px;margin-top:46px;border-top:1px solid var(--line);color:#5a6068;font-size:14px}}
+  footer a{{color:#1b1e23;text-decoration:none;font-weight:600}}
+  .endline{{text-align:center;font-size:15px;color:#1b1e23;margin:0;padding:0 0 54px}}
   @media (max-width:620px){{h1{{font-size:38px}}.graphrow{{grid-template-columns:86px 1fr}}.graphcount{{grid-column:2}}.entry dl{{grid-template-columns:1fr}}}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <nav class="commons-bar" aria-label="Aurora Commons sites">
   <a class="brand" href="https://auroracommons.github.io/auroracommons/">Aurora Commons</a>
-  <span class="current" aria-current="page">The Index</span>
+  <span class="current" aria-current="page">The Index (you are here)</span>
+  <a href="https://auroracommons.github.io/auroracommons/foundations.html">Foundations</a>
   <a href="https://auroracommons.github.io/ground/">Ground</a>
   <a href="https://auroracommons.github.io/still/">Still</a>
   <a href="https://auroracommons.github.io/atlas/">Atlas</a>
@@ -251,9 +284,11 @@ def render():
   <a href="https://auroracommons.github.io/lumen/">Lumen</a>
 </nav>
 <div class="wrap">
+<main id="main">
 <header>
   <h1>The Index</h1>
-  <p class="tag">The Commons record in time order, each entry with its state, hand, and check.</p>
+  <p class="part">Part of the Record: the Commons record in time order.</p>
+  <p class="tag">Each entry shows one claim, its state, who stands behind it, and its date, with a link to the original.</p>
   <p class="firststep">Start with the first entry below. Open its original, then compare it with the claim.</p>
   <p class="counts">{count_sentence(entries, sources, proposals, proposal_sources)}</p>
 </header>
@@ -272,15 +307,14 @@ def render():
   </div>
 </section>
 
-<main>
-<section aria-labelledby="entries-h">
-  <h2 id="entries-h">Entries</h2>
-    {entries_markup}
-</section>
-
 <section aria-labelledby="key-h">
   <h2 id="key-h">Key to the states</h2>
       {key_table()}
+</section>
+
+<section aria-labelledby="entries-h">
+  <h2 id="entries-h">Entries</h2>
+    {entries_markup}
 </section>
 </main>
 
@@ -289,6 +323,7 @@ def render():
   <p>Stand on the shoulders of giants.</p>
   <p>One rule: raise the floor beneath everyone.</p>
   <p>Advised by Groundskeeper.</p>
+  <p><a href="https://auroracommons.github.io/auroracommons/">Back to the home page</a></p>
   <p><a href="https://www.linkedin.com/company/aurora-commons-io/">Aurora Commons on LinkedIn</a></p>
 </footer>
 </div>
