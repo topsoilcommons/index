@@ -14,8 +14,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE_URL = "https://auroracommons.github.io/index/"
-MARK_URL = "https://auroracommons.github.io/auroracommons/assets/aurora-logo.png"
+SITE_URL = "https://topsoilcommons.github.io/index/"
+MARK_URL = "https://topsoilcommons.github.io/topsoilcommons/assets/aurora-logo.png"
 
 
 def load_json(path):
@@ -205,7 +205,7 @@ def render():
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Aurora Commons">
+<meta property="og:site_name" content="Topsoil Commons">
 <meta property="og:title" content="The Index">
 <meta property="og:description" content="The Commons record in time order, each entry with its state, hand, and check.">
 <meta property="og:url" content="{SITE_URL}">
@@ -271,17 +271,17 @@ def render():
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
-<nav class="commons-bar" aria-label="Aurora Commons sites">
-  <a class="brand" href="https://auroracommons.github.io/auroracommons/">Aurora Commons</a>
+<nav class="commons-bar" aria-label="Topsoil Commons sites">
+  <a class="brand" href="https://topsoilcommons.github.io/topsoilcommons/"><svg class="bar-mark" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false" style="flex:none;align-self:center;margin-right:7px"><g fill="currentColor"><rect x="4" y="2.5" width="16" height="2"/><rect x="4" y="5.5" width="16" height="2"/><rect x="4" y="8.5" width="16" height="2"/><rect x="4" y="11.5" width="4.5" height="8"/><rect x="15.5" y="11.5" width="4.5" height="8"/><rect x="2" y="20.5" width="20" height="2.2"/></g></svg>Topsoil Commons</a>
   <span class="current" aria-current="page">The Index (you are here)</span>
-  <a href="https://auroracommons.github.io/auroracommons/foundations.html">Foundations</a>
-  <a href="https://auroracommons.github.io/ground/">Ground</a>
-  <a href="https://auroracommons.github.io/still/">Still</a>
-  <a href="https://auroracommons.github.io/atlas/">Atlas</a>
-  <a href="https://auroracommons.github.io/cohort/">Cohort</a>
-  <a href="https://auroracommons.github.io/graph/">Graph</a>
-  <a href="https://auroracommons.github.io/machine/">Machine</a>
-  <a href="https://auroracommons.github.io/lumen/">Lumen</a>
+  <a href="https://topsoilcommons.github.io/topsoilcommons/foundations.html">Foundations</a>
+  <a href="https://topsoilcommons.github.io/ground/">Ground</a>
+  <a href="https://topsoilcommons.github.io/still/">Still</a>
+  <a href="https://topsoilcommons.github.io/atlas/">Atlas</a>
+  <a href="https://topsoilcommons.github.io/cohort/">Cohort</a>
+  <a href="https://topsoilcommons.github.io/graph/">Graph</a>
+  <a href="https://topsoilcommons.github.io/machine/">Machine</a>
+  <a href="https://topsoilcommons.github.io/lumen/">Lumen</a>
 </nav>
 <div class="wrap">
 <main id="main">
@@ -319,12 +319,12 @@ def render():
 </main>
 
 <footer>
-  <p>Aurora Commons addresses the hierarchy of human needs through open source.</p>
+  <p>Topsoil Commons addresses the hierarchy of human needs through open source.</p>
   <p>Stand on the shoulders of giants.</p>
   <p>One rule: raise the floor beneath everyone.</p>
   <p>Advised by Groundskeeper.</p>
-  <p><a href="https://auroracommons.github.io/auroracommons/">Back to the home page</a></p>
-  <p><a href="https://www.linkedin.com/company/aurora-commons-io/">Aurora Commons on LinkedIn</a></p>
+  <p><a href="https://topsoilcommons.github.io/topsoilcommons/">Back to the home page</a></p>
+  <p><a href="https://www.linkedin.com/company/topsoil-commons/">Topsoil Commons on LinkedIn</a></p>
 </footer>
 </div>
 <p class="endline">That is everything. The page ends here.</p>

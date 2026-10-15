@@ -24,7 +24,7 @@ State as of October 15, 2026. Every line carries its evidence; a line without ev
 - [x] CI workflow present: validator, format check, fixture tests, and viewer check
 - [x] Fixture corpus present: 6 cases under tests/fixtures, counted by tests/run_tests.py on October 15, 2026
 - [x] Repository pushed and verified against the remote: local and remote main matched at commit e2f2148 on October 15, 2026
-- [ ] Live page answering at https://auroracommons.github.io/index/
+- [ ] Live page answering at https://topsoilcommons.github.io/index/
 - [ ] Repository description and topics set
 - [ ] Good first issues open, sized in hours
 - [ ] Tagged release v0.1 once CI is green

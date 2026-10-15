@@ -1,10 +1,10 @@
 # The Index
 
-A public chronological multimedia index for Aurora Commons.
+A public chronological multimedia index for Topsoil Commons.
 
 First step: open the live page, pick the first entry, open its original, and compare it with the claim. The check takes about a minute.
 
-Live page: https://auroracommons.github.io/index/
+Live page: https://topsoilcommons.github.io/index/
 
 ## What it is
 

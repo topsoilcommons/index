@@ -9,7 +9,7 @@
       "place": "GitHub",
       "medium": "document",
       "claim": "The starter kit for community indexes stands in this repository, with a worked example proposal in its starter folder.",
-      "original_url": "https://raw.githubusercontent.com/auroracommons/index/main/STARTER.md",
+      "original_url": "https://raw.githubusercontent.com/topsoilcommons/index/main/STARTER.md",
       "original_hash": {
         "algorithm": "SHA-256",
         "value": "7a669e2d27ad4c20cd65502c2f3f339a351e07d00e6762d6e7d8688f46cbe256"
@@ -28,7 +28,7 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "b143d734d3c1860f5562254bc34aaa865457095d16602dc38573a0e6584e6bb1"
+      "seal": "0f58d1815e23f44c75478a29e5ce051124c51249171381b24dfb5bca1e5d9ee4"
     }
   ]
 }

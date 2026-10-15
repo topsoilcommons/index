@@ -2,7 +2,7 @@
 
 ## A public chronological multimedia index. Specification, draft 1.
 
-Written October 15, 2026, at Joshua's direction. Status: specification only. Nothing is built yet, and nothing here is published. The Index would live in the Aurora Commons GitHub lab as its own small repository, beside the seven acts, under the same rules as the rest of the lab.
+Written October 15, 2026, at Joshua's direction. Status: specification only. Nothing is built yet, and nothing here is published. The Index would live in the Topsoil Commons GitHub lab as its own small repository, beside the seven acts, under the same rules as the rest of the lab.
 
 ## What it is
 
