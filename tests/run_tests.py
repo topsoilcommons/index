@@ -16,6 +16,9 @@ CASES = [
     ("forged-seal", 1, "seal mismatch"),
     ("agent-proposal-without-operator", 1, "an agent proposer must name its operator"),
     ("verified-without-a-hand", 1, "requires a named human hand"),
+    ("tampered-entry", 1, "chain hash mismatch"),
+    ("removed-entry", 1, "chain previous does not match"),
+    ("reordered-entries", 1, "chain previous does not match"),
 ]
 
 

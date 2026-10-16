@@ -1,0 +1,80 @@
+{
+  "format_version": 1,
+  "month": "2026-10",
+  "entries": [
+    {
+      "id": "reorder-entry-two-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": null,
+      "medium": "text",
+      "claim": "This fixture entry states the second test claim.",
+      "original_url": "https://example.com/fixture-original",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Fixture Proposer",
+        "operator": null
+      },
+      "hand": "Fixture Checker",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Fixture Checker",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "0b09fb0df02fcfa859585ce0fcf87db3b3bd08be67d0df524a72002bf36ae905",
+      "chain": {
+        "previous": "dcf5d1beca97d410dfc782b25a34c75105681c10aa3ae7029c69db7ac5a01fa3",
+        "hash": "f45de14de8a061a3d18b30f8b0c2b23e6f1cfca7b19d3e0fa3cbe1116a043dbe"
+      }
+    },
+    {
+      "id": "reorder-entry-one-2026-10-15",
+      "time_claimed": "2026-10-15",
+      "time_received": "2026-10-15",
+      "place": null,
+      "medium": "text",
+      "claim": "This fixture entry states the first test claim.",
+      "original_url": "https://example.com/fixture-original",
+      "original_hash": {
+        "algorithm": "SHA-256",
+        "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "proposed_by": {
+        "kind": "human",
+        "name": "Fixture Proposer",
+        "operator": null
+      },
+      "hand": "Fixture Checker",
+      "state": "verified",
+      "check": {
+        "method": "Opened the original at its source and compared it with the claim.",
+        "checked_by": "Fixture Checker",
+        "result": "The claim matched the original.",
+        "date": "2026-10-15"
+      },
+      "links": {
+        "supports": [],
+        "contradicts": [],
+        "corrects": [],
+        "corrections": []
+      },
+      "seal": "5d7e903ef7d6a915ca78ec9671b23e85b95fc08fe5ee829f9856be16464ececa",
+      "chain": {
+        "previous": null,
+        "hash": "dcf5d1beca97d410dfc782b25a34c75105681c10aa3ae7029c69db7ac5a01fa3"
+      }
+    }
+  ]
+}

@@ -13,6 +13,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from chain import chain_hash_for  # noqa: E402
+
+
 ROOT = Path(__file__).resolve().parents[1]
 FORMAT_PATH = ROOT / "format.json"
 FORMAT = json.loads(FORMAT_PATH.read_text(encoding="utf-8"))
@@ -91,20 +95,62 @@ def load_file(path):
     return data, errors
 
 
-def validate_entry(path, entry, seen_ids, all_ids):
+def validate_chain(path, label, entry, chain_state):
+    """Check one entry's chain record against its queue's running state.
+
+    chain_state maps a queue name to the stored chain hash of the entry
+    before the current one, or None at the head of the queue.
+    """
+    if "proposals" in path.parts:
+        queue = "proposals"
+    elif "entries" in path.parts:
+        queue = "entries"
+    else:
+        return []
+    errors = []
+    chain = entry.get("chain")
+    if chain is None:
+        errors.append(f"{label}: a chain record is required on every entry")
+        chain_state[queue] = "no-chain-record"
+        return errors
+    if not isinstance(chain, dict) or set(chain.keys()) != {"previous", "hash"}:
+        errors.append(f"{label}: chain must carry previous and hash")
+        chain_state[queue] = "no-chain-record"
+        return errors
+    previous = chain["previous"]
+    digest = chain["hash"]
+    if previous is not None and not (isinstance(previous, str) and HEX64.match(previous)):
+        errors.append(f"{label}: chain previous must be null or 64 lowercase hexadecimal characters")
+    if not isinstance(digest, str) or not HEX64.match(digest):
+        errors.append(f"{label}: chain hash must be 64 lowercase hexadecimal characters")
+        chain_state[queue] = "no-chain-record"
+        return errors
+    if previous != chain_state.get(queue):
+        errors.append(
+            f"{label}: chain previous does not match the hash of the entry before it"
+        )
+    if digest != chain_hash_for(entry, previous):
+        errors.append(f"{label}: chain hash mismatch")
+    chain_state[queue] = digest
+    return errors
+
+
+def validate_entry(path, entry, seen_ids, all_ids, chain_state):
     label = f"{path}: {entry.get('id', 'entry without id')}"
     errors = []
     if not isinstance(entry, dict):
         return [f"{path}: each entry must be one JSON object"]
     expected = set(ENTRY_FIELDS) | {"seal"}
-    if set(entry.keys()) != expected:
+    allowed = expected | {"chain"}
+    if not expected.issubset(set(entry.keys())) or not set(entry.keys()).issubset(allowed):
         missing = sorted(expected - set(entry.keys()))
-        extra = sorted(set(entry.keys()) - expected)
+        extra = sorted(set(entry.keys()) - allowed)
         if missing:
             errors.append(f"{label}: missing required fields: {', '.join(missing)}")
         if extra:
             errors.append(f"{label}: unknown fields: {', '.join(extra)}")
         return errors
+    errors.extend(validate_chain(path, label, entry, chain_state))
 
     entry_id = entry["id"]
     if not isinstance(entry_id, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", entry_id):
@@ -246,13 +292,14 @@ def main(argv):
                     all_ids.add(entry["id"])
 
     seen_ids = set()
+    chain_state = {}
     total = 0
     for path, data in loaded:
         errors = []
         previous = None
         for entry in data["entries"]:
             total += 1
-            errors.extend(validate_entry(path, entry, seen_ids, all_ids))
+            errors.extend(validate_entry(path, entry, seen_ids, all_ids, chain_state))
             if isinstance(entry, dict):
                 current = parse_time(entry.get("time_claimed"))
                 if previous is not None and current is not None and current < previous:

@@ -33,7 +33,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "0f43323c84f581e0aa56237f8bb7206efa73ef6c4888c4a4f712f64abd9e3ce3"
+      "seal": "0f43323c84f581e0aa56237f8bb7206efa73ef6c4888c4a4f712f64abd9e3ce3",
+      "chain": {
+        "previous": null,
+        "hash": "28e2c2e4f50b9ed8b4dc11afc4a828553b23892c93e514447b964930120584ff"
+      }
     }
   ]
 }

@@ -35,6 +35,7 @@ State as of October 15, 2026. Every line carries its evidence; a line without ev
 - The fixture runner passes all 6 cases: the valid case is accepted, and each broken case is rejected for its stated reason.
 - The generated format table matches format.json.
 - The generated viewer matches the data files.
+- Hardening, October 16, 2026: every standing entry carries a chain record computed by tools/build_chain.py; chain.json publishes the head hash and count of each queue (12 adopted entries, 1 proposal); SECURITY.md states the threat model and the limits; the fixture corpus stands at 9 cases, with tampered-entry, removed-entry, and reordered-entries each rejected for the chain error alone.
 - Seed states, counted from entries/2026-10.json on October 15, 2026: 11 entries stand verified and 1 entry stands corrected.
 - Seed media, counted from entries/2026-10.json on October 15, 2026: 6 entries are text, 1 entry is image, and 5 entries are page.
 

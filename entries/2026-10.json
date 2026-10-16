@@ -33,7 +33,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "5faf308cd2e011be4cd60b97ae7ec521674209d24a5ec5033d50300576ded4fc"
+      "seal": "5faf308cd2e011be4cd60b97ae7ec521674209d24a5ec5033d50300576ded4fc",
+      "chain": {
+        "previous": null,
+        "hash": "e5a479ea2de882da6fb70cf4d3d636e39215293eba1f078e7e185905347f5428"
+      }
     },
     {
       "id": "timeline-gates-2026-10-15",
@@ -66,7 +70,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "b848f26a798a8191936d488e3e98e6e5b5d9af4a2374c620d9d6673a88f9a20f"
+      "seal": "b848f26a798a8191936d488e3e98e6e5b5d9af4a2374c620d9d6673a88f9a20f",
+      "chain": {
+        "previous": "e5a479ea2de882da6fb70cf4d3d636e39215293eba1f078e7e185905347f5428",
+        "hash": "b60ac9456107ecfe17fbc52e0ee9335854d39a25f9c96e376eccdd3d1bda5ad2"
+      }
     },
     {
       "id": "needs-map-2026-10-15",
@@ -99,7 +107,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "0e772e9d75660d50b2bc8e6f7143d545c6f05dde06805150e209759ae4335b40"
+      "seal": "0e772e9d75660d50b2bc8e6f7143d545c6f05dde06805150e209759ae4335b40",
+      "chain": {
+        "previous": "b60ac9456107ecfe17fbc52e0ee9335854d39a25f9c96e376eccdd3d1bda5ad2",
+        "hash": "d680f53bd0c5824bd5f21886cfce35d98a898574ca92a63552101b1d6d6417fb"
+      }
     },
     {
       "id": "contribution-ledger-2026-10-15",
@@ -132,7 +144,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "939b98c575a86711ba220b73b9fb860d30b496d7eeb82deff7362030d965608a"
+      "seal": "939b98c575a86711ba220b73b9fb860d30b496d7eeb82deff7362030d965608a",
+      "chain": {
+        "previous": "d680f53bd0c5824bd5f21886cfce35d98a898574ca92a63552101b1d6d6417fb",
+        "hash": "56eacff5d1c5d8cb31ac3a3be255f2b5ae8af8022a2589ddc308ac4e614955ae"
+      }
     },
     {
       "id": "commons-mark-2026-10-15",
@@ -165,7 +181,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "bcb9caad1c7b0c64f0094203b84c73d6591ae48f1aa4a258595eab0312edb5b3"
+      "seal": "bcb9caad1c7b0c64f0094203b84c73d6591ae48f1aa4a258595eab0312edb5b3",
+      "chain": {
+        "previous": "56eacff5d1c5d8cb31ac3a3be255f2b5ae8af8022a2589ddc308ac4e614955ae",
+        "hash": "a2aad66099d3115826f52961b0500b33f24fc4a2ee6e82391c955271bbfbb195"
+      }
     },
     {
       "id": "commons-home-2026-10-15",
@@ -198,7 +218,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "8aff53ae0577774a391fa0633a32a342876e208cddd32a7d3c5103993b260147"
+      "seal": "8aff53ae0577774a391fa0633a32a342876e208cddd32a7d3c5103993b260147",
+      "chain": {
+        "previous": "a2aad66099d3115826f52961b0500b33f24fc4a2ee6e82391c955271bbfbb195",
+        "hash": "7a8f063d1e169d5434a5b5e2732f302db3715492415ddabc5c37b57440871e6b"
+      }
     },
     {
       "id": "foundations-page-2026-10-15",
@@ -231,7 +255,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "120b807a8db3717aa76d67e59ebc1a452b0c5440d0c736b0fa8b7c3a195aefe7"
+      "seal": "120b807a8db3717aa76d67e59ebc1a452b0c5440d0c736b0fa8b7c3a195aefe7",
+      "chain": {
+        "previous": "7a8f063d1e169d5434a5b5e2732f302db3715492415ddabc5c37b57440871e6b",
+        "hash": "989e54b4942aa904acbfcd000a3af801b015ce56f121f6df0388e155da52c348"
+      }
     },
     {
       "id": "ground-board-2026-10-15",
@@ -264,7 +292,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "5e5757bb932041ef0844ce522a9cd9290fb191bac4dc1ee21a0105b910e5768f"
+      "seal": "5e5757bb932041ef0844ce522a9cd9290fb191bac4dc1ee21a0105b910e5768f",
+      "chain": {
+        "previous": "989e54b4942aa904acbfcd000a3af801b015ce56f121f6df0388e155da52c348",
+        "hash": "90ba708645864a6716103dd7b52c0aee630a5f84fc5f2eb43542815f5f73494e"
+      }
     },
     {
       "id": "still-page-2026-10-15",
@@ -297,7 +329,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "c4facb47cb208a766cd002f2d4bb0014d4a6894721fb5b6b0136236d0a2ba26b"
+      "seal": "c4facb47cb208a766cd002f2d4bb0014d4a6894721fb5b6b0136236d0a2ba26b",
+      "chain": {
+        "previous": "90ba708645864a6716103dd7b52c0aee630a5f84fc5f2eb43542815f5f73494e",
+        "hash": "456303396e629505c9ffea67af6c6511a0cbf30a1a1d32921501ae86bb129b42"
+      }
     },
     {
       "id": "atlas-proof-2026-10-15",
@@ -330,7 +366,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "cf6117060afeb5cfdf7029c093e4a47fbc993585dab424f976fb4378db486625"
+      "seal": "cf6117060afeb5cfdf7029c093e4a47fbc993585dab424f976fb4378db486625",
+      "chain": {
+        "previous": "456303396e629505c9ffea67af6c6511a0cbf30a1a1d32921501ae86bb129b42",
+        "hash": "c543bcb2c24c9408cf8376a79cdf69ddfce8c084eccec14baadeb56fefd19124"
+      }
     },
     {
       "id": "graph-description-0937-2026-10-15",
@@ -365,7 +405,11 @@
           "graph-description-0904-2026-10-15"
         ]
       },
-      "seal": "3a4ed9b88a36e07d0715fff10fd821a067a311d47b9bb949f8c5bbcff000c43f"
+      "seal": "3a4ed9b88a36e07d0715fff10fd821a067a311d47b9bb949f8c5bbcff000c43f",
+      "chain": {
+        "previous": "c543bcb2c24c9408cf8376a79cdf69ddfce8c084eccec14baadeb56fefd19124",
+        "hash": "3b7f5142657acf6a489f35539228fff9d93fab753d889450aec9885446c8d442"
+      }
     },
     {
       "id": "graph-description-0904-2026-10-15",
@@ -400,7 +444,11 @@
         ],
         "corrections": []
       },
-      "seal": "761ad04789363728e54610b78399d00b8a72b7e835b4adfeb2acc2efc1aef116"
+      "seal": "761ad04789363728e54610b78399d00b8a72b7e835b4adfeb2acc2efc1aef116",
+      "chain": {
+        "previous": "3b7f5142657acf6a489f35539228fff9d93fab753d889450aec9885446c8d442",
+        "hash": "7dfa556018effd72e7d1760970dfec5ecaec77bceae04b42de1aed819b43afb1"
+      }
     }
   ]
 }

@@ -14,6 +14,8 @@ jobs:
           python-version: "3.12"
       - name: Validate entries and proposals
         run: python3 tools/validate.py
+      - name: Check the hash chain and the published root
+        run: python3 tools/build_chain.py --check
       - name: Check the generated format table
         run: python3 tools/build_format.py --check
       - name: Run the fixture tests

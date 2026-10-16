@@ -1,0 +1,12 @@
+{
+  "algorithm": "SHA-256",
+  "generated_by": "tools/build_chain.py",
+  "adopted_entries": {
+    "count": 12,
+    "head": "7dfa556018effd72e7d1760970dfec5ecaec77bceae04b42de1aed819b43afb1"
+  },
+  "proposals": {
+    "count": 1,
+    "head": "d2b430017e1814adb3411b116af00ff8459ffa1878d4c482d7558b6b853a6448"
+  }
+}

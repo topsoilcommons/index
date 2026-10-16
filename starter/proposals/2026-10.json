@@ -28,7 +28,11 @@
         "corrects": [],
         "corrections": []
       },
-      "seal": "0f58d1815e23f44c75478a29e5ce051124c51249171381b24dfb5bca1e5d9ee4"
+      "seal": "0f58d1815e23f44c75478a29e5ce051124c51249171381b24dfb5bca1e5d9ee4",
+      "chain": {
+        "previous": null,
+        "hash": "645e98f953c452201f23c8ce1fb55eab82c2da7abb5f507838a7ccbd19c6685f"
+      }
     }
   ]
 }
