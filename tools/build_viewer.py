@@ -122,6 +122,32 @@ def key_table():
     return "\n      ".join(rows)
 
 
+def display_url(url):
+    """The address the viewer links to for an entry's original.
+
+    Sealed entries keep the addresses they were filed with, and the
+    data files are not edited. The account was renamed after the seed
+    entries were filed (auroracommons to topsoilcommons), and the old
+    Pages addresses no longer resolve. The rename swept the committed
+    viewer to the current addresses by hand; this mapping is that same
+    sweep, kept here so a rebuild writes the same page. Only the link
+    changes. The entry, its seal, and its filed address do not.
+    """
+    url = url.replace(
+        "https://raw.githubusercontent.com/auroracommons/auroracommons/",
+        "https://raw.githubusercontent.com/topsoilcommons/topsoilcommons/")
+    url = url.replace(
+        "https://raw.githubusercontent.com/auroracommons/",
+        "https://raw.githubusercontent.com/topsoilcommons/")
+    url = url.replace(
+        "https://auroracommons.github.io/auroracommons/",
+        "https://topsoilcommons.github.io/topsoilcommons/")
+    url = url.replace(
+        "https://auroracommons.github.io/",
+        "https://topsoilcommons.github.io/")
+    return url
+
+
 def link_line(entry):
     links = []
     for correction in entry["links"]["corrections"]:
@@ -166,7 +192,7 @@ def entry_html(entry, state_labels):
     return f"""<article class="entry" id="{html.escape(entry['id'])}">
       <h3>{html.escape(entry['claim'])}</h3>
       <p class="state">This entry <span class="rub">stands {html.escape(entry['state'])}</span>. {hand_sentence} The claim is dated {html.escape(display_date(entry['time_claimed']))}.</p>
-      <p><a href="{html.escape(entry['original_url'])}\">Open the original for this entry</a></p>
+      <p><a href="{html.escape(display_url(entry['original_url']))}\">Open the original for this entry</a></p>
       <p><button type="button" class="share" data-share data-title="The Index" data-text="{html.escape(entry['claim'], quote=True)}" data-url="{SITE_URL}#{html.escape(entry['id'])}">Share</button></p>
       <details class="tech">
         <summary>For agents and builders</summary>
