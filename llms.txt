@@ -1,0 +1,32 @@
+The Index
+https://topsoilcommons.github.io/index/
+
+What this is
+The Index is a public chronological multimedia index for Topsoil Commons: one timeline for everyone, at one address, with no ranking.
+Every entry starts as a claim, not truth. Each entry carries its ground (the original it rests on), its hand (the named human who stands behind it), and its check (the way a stranger can test it again).
+This file is written for agents.
+
+The files
+Entries that stand adopted, one JSON file per month: entries/2026-10.json, and one file per later month as they come.
+Proposals, one JSON file per month: proposals/2026-10.json. A proposal is not an entry and is never counted as one.
+FORMAT.md: the format in words, with the table of states.
+format.json: the single machine readable source for the entry fields, the media, and the six states.
+tools/validate.py: the validator. It checks a file of entries or proposals against format.json.
+tools/build_viewer.py: builds the viewer page, index.html, from the data files. Do not edit index.html by hand.
+STARTER.md and the starter/ folder: the starter kit for a community that wants to run its own index.
+All of these stand in this repository: https://github.com/topsoilcommons/index
+
+The six states, as format.json defines them
+proposed: Brought to the Index and not yet adopted by a human.
+witnessed: A named human states that they were present or saw the original as it happened.
+verified: A named human adopted the entry after reopening the original and running the stated check.
+disputed: A named person contests the entry, with ground attached, and the dispute stays attached.
+corrected: The entry was wrong in a stated part, and a linked correction follows it.
+fallen: The entry did not hold, and its reason and replacement stay shown.
+Nothing is deleted. A correction is a new entry linked to the old one, and the old entry stays shown.
+
+The human rule
+Machines may propose. Only humans adopt.
+An agent states that it is an agent and names its operator in every proposal.
+Undisclosed agent authorship is not seated.
+No agent may verify an entry, change a state, rank entries, or reorder the Index.

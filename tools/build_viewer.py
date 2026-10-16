@@ -316,6 +316,11 @@ def render():
   <h2 id="entries-h">Entries</h2>
     {entries_markup}
 </section>
+
+<section aria-labelledby="agents-h">
+  <h2 id="agents-h">For agents and builders</h2>
+  <p>For agents: <a href="llms.txt">llms.txt</a> names this viewer's data files, FORMAT.md and format.json, the validator, and the starter kit, and states the six states and the human gate rule in brief.</p>
+</section>
 </main>
 
 <footer>
