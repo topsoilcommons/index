@@ -31,3 +31,11 @@ A proposal does not become an entry until a named human adopts it and records a 
 ## Pull requests
 
 Keep each request small and single purpose. State the evidence in the request: the original you opened, the check you ran, and the validator result.
+
+## Ways in, by level
+
+**First hour.** No experience with this project is assumed. Run python3 tools/validate.py and python3 tests/run_tests.py (9 fixture cases, all passing), then check one adopted entry against its original, by the steps above. One check by a new hand is a full contribution.
+
+**First week.** Propose entries of your own, one claim each, in the current month file under proposals/. A named human adopts sound proposals into entries/, and adoptions and checks stand in the public record with your name on them.
+
+**The deep end.** Every entry carries a place, and no view of the Index by place exists yet: the place layer is promised in SPEC.md and unbuilt. There is no measured figure to beat here; the honest problem is design under this project's own rules (one timeline for everyone, nothing ranked, nothing deleted) at a scale past the current 13 standing records.

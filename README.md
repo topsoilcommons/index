@@ -6,6 +6,8 @@ First step: open the live page, pick the first entry, open its original, and com
 
 Live page: https://topsoilcommons.github.io/index/
 
+Thirteen records stand in the open today: twelve adopted, one proposed, each carrying its chain record in chain.json, where any mirror can recount them.
+
 ## What it is
 
 The Index files records in time order. A record can be text, an image, a page, a photograph, a video, an audio recording, or a document. Each entry points to its original, carries a fingerprint of that original, names who proposed it, shows its state, and carries its check.
